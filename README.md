@@ -44,3 +44,61 @@
       <label for="star1A"></label>
     </div>
   </div>
+
+  body {
+        background-color:black; 
+    }
+.titulo{ 
+  color: white;
+  text-align: center;
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal
+  
+}
+.base{
+  float: left;
+  padding: 10px;
+  background-color:white;
+  padding: 50px;
+  margin: 20px;
+  font-family: 'Font Awesome Lathusca', sans-serif;
+}
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  font-size: 45px;
+  color: grey;
+  float: right;
+  
+}
+
+.rating label:before {
+  content: '\2605'; /* Estrela vazia */
+}
+
+.rating input:checked ~ label {
+  color: #ffcc00;
+}
+
+.rating input:checked ~ label:before {
+  content: '\2605'; /* Estrela preenchida */
+}
+.livro1{
+  width: 3px;
+}
+
+const stars = document.querySelectorAll('.rating input');
+
+stars.forEach(star => {
+  star.addEventListener('change', function() {
+    console.log(this.value); // Aqui você pode enviar o valor para o servidor
+  });
+});
